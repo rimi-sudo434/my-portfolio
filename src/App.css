@@ -12,35 +12,34 @@ body {
   position: relative;
   padding: 40px;
 
-  /* Deep space background */
-  background: radial-gradient(circle at center, #05010a, #000000);
+  /* 🌌 Deep Purple Universe Background */
+  background: radial-gradient(circle at center,
+    #0b0014,
+    #140022,
+    #1a0033,
+    #0a0010
+  );
 }
 
 /* ⭐ STAR LAYER 1 */
 .App::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
+  inset: 0;
   background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.2;
+  background-size: 60px 60px;
+  opacity: 0.15;
   animation: moveStars 120s linear infinite;
 }
 
-/* ⭐ STAR LAYER 2 (smaller stars) */
+/* ⭐ STAR LAYER 2 */
 .App::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
+  inset: 0;
   background-image: radial-gradient(white 0.8px, transparent 0.8px);
-  background-size: 80px 80px;
-  opacity: 0.15;
+  background-size: 100px 100px;
+  opacity: 0.1;
   animation: moveStars 200s linear infinite;
 }
 
@@ -50,7 +49,7 @@ body {
   z-index: 2;
 }
 
-/* star movement */
+/* slow star movement */
 @keyframes moveStars {
   from {
     transform: translateY(0);
@@ -75,10 +74,15 @@ p {
 
 img {
   border-radius: 15px;
-  border: 2px solid #c084fc;
+  border: 2px solid #a855f7;
   margin-top: 20px;
 }
 
 a {
   color: #a78bfa;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
 }
