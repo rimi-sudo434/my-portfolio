@@ -1,65 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .App {
   min-height: 100vh;
   text-align: center;
-  padding: 40px;
   font-family: Arial, sans-serif;
-
-  /* 👑 Royal Purple Gradient Background */
-  background: linear-gradient(-45deg, #1a002b, #4b0082, #6a11cb, #8e2de2);
-  background-size: 400% 400%;
-  animation: purpleMove 10s ease infinite;
-
   color: white;
+  position: relative;
+  padding: 40px;
+
+  /* Deep space background */
+  background: radial-gradient(circle at center, #05010a, #000000);
 }
 
-/* Animation */
-@keyframes purpleMove {
-  0% {
-    background-position: 0% 50%;
-  }
+/* ⭐ STAR LAYER 1 */
+.App::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.2;
+  animation: moveStars 120s linear infinite;
+}
 
-  50% {
-    background-position: 100% 50%;
-  }
+/* ⭐ STAR LAYER 2 (smaller stars) */
+.App::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 0.8px, transparent 0.8px);
+  background-size: 80px 80px;
+  opacity: 0.15;
+  animation: moveStars 200s linear infinite;
+}
 
-  100% {
-    background-position: 0% 50%;
+/* keep content above stars */
+.App > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* star movement */
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
   }
 }
 
-/* Heading */
+/* text styling */
 h1 {
   color: #c084fc;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
 }
 
-/* Paragraph */
-p {
-  color: #e9d5ff;
-  font-size: 1.1rem;
-}
-
-/* Image */
-img {
-  border-radius: 15px;
-  margin-top: 20px;
-  border: 2px solid #c084fc;
-}
-
-/* Section headings */
 h2 {
-  margin-top: 30px;
   color: #d8b4fe;
 }
 
-/* Links */
-a {
-  color: #a78bfa;
-  text-decoration: none;
-  font-weight: bold;
+p {
+  color: #e9d5ff;
 }
 
-a:hover {
-  color: white;
+img {
+  border-radius: 15px;
+  border: 2px solid #c084fc;
+  margin-top: 20px;
+}
+
+a {
+  color: #a78bfa;
 }
