@@ -23,8 +23,21 @@ function App() {
 
       {/* CONTACT */}
       <h2>📬 Contact</h2>
-      <p>Email: rimitaghosh477@gmail.com</p>
-      <p>GitHub: https://github.com/rimi-sudo434</p>
+
+      <p>
+        Email: <a href="mailto:rimitaghosh477@gmail.com">rimitaghosh477@gmail.com</a>
+      </p>
+
+      <p>
+        GitHub:{" "}
+        <a
+          href="https://github.com/rimi-sudo434"
+          target="_blank"
+          rel="noreferrer"
+        >
+          github.com/rimi-sudo434
+        </a>
+      </p>
 
     </div>
   );
