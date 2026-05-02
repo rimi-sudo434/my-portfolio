@@ -1,14 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   min-height: 100vh;
   text-align: center;
-  padding: 40px;
   font-family: Arial, sans-serif;
-
-  background: linear-gradient(135deg, #0f172a, #1e3c72, #2a5298);
   color: white;
+
+  /* Animated background */
+  background: linear-gradient(-45deg, #0f172a, #1e3c72, #2a5298, #0f172a);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+
+  padding: 40px;
 }
 
+/* Animation keyframes */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Heading styles */
+h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 30px;
+  color: #93c5fd;
+}
+
+/* Paragraph */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+/* Image styling */
 img {
+  margin: 15px;
   border-radius: 15px;
-  margin: 10px;
+  border: 2px solid #60a5fa;
+  transition: transform 0.3s ease;
+}
+
+/* Image hover effect */
+img:hover {
+  transform: scale(1.05);
 }
