@@ -9,15 +9,16 @@ body {
   font-family: Arial, sans-serif;
   color: white;
 
-  /* animated gradient background */
+  /* Animated gradient background */
   background: linear-gradient(-45deg, #0f172a, #1e3c72, #2a5298, #0f172a);
   background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
+  animation: moveBg 10s ease infinite;
 
   padding: 40px;
 }
 
-@keyframes gradientMove {
+/* Animation */
+@keyframes moveBg {
   0% {
     background-position: 0% 50%;
   }
@@ -31,14 +32,14 @@ body {
   }
 }
 
-/* image style */
+/* Image styling */
 img {
   border-radius: 15px;
   margin: 15px;
   border: 2px solid white;
 }
 
-/* links */
+/* Links */
 a {
   color: #60a5fa;
   text-decoration: none;
