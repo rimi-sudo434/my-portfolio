@@ -9,27 +9,24 @@ body {
   font-family: Arial, sans-serif;
   color: white;
 
-  /* IMPORTANT: animated background */
+  /* animated gradient background */
   background: linear-gradient(-45deg, #0f172a, #1e3c72, #2a5298, #0f172a);
   background-size: 400% 400%;
-  animation: moveBg 10s ease infinite;
+  animation: bgMove 8s ease infinite;
 
   padding: 40px;
 }
 
-@keyframes moveBg {
+@keyframes bgMove {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
-}
-
-/* extra safety */
-html, body {
-  height: 100%;
 }
