@@ -21,14 +21,6 @@ function App() {
       <h2>💻 Skills</h2>
       <p>HTML, CSS, JavaScript, React, Java, Python</p>
 
-      {/* TOOLS */}
-      <h2>🧰 Tools</h2>
-      <p>Git, GitHub, VS Code, Chrome DevTools, Vercel</p>
-
-      {/* GOALS */}
-      <h2>🎯 Goals</h2>
-      <p>I aim to become a full-stack developer by building real-world projects and improving problem-solving skills.</p>
-
       {/* CONTACT */}
       <h2>📬 Contact</h2>
       <p>Email: rimitaghosh477@gmail.com</p>
