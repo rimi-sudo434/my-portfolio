@@ -1,24 +1,19 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .App {
   min-height: 100vh;
   text-align: center;
-  font-family: Arial, sans-serif;
-  color: white;
-
-  /* Animated gradient background */
-  background: linear-gradient(-45deg, #0f172a, #1e3c72, #2a5298, #0f172a);
-  background-size: 400% 400%;
-  animation: moveBg 10s ease infinite;
-
   padding: 40px;
+  font-family: Arial, sans-serif;
+
+  /* 👑 Royal Purple Gradient Background */
+  background: linear-gradient(-45deg, #1a002b, #4b0082, #6a11cb, #8e2de2);
+  background-size: 400% 400%;
+  animation: purpleMove 10s ease infinite;
+
+  color: white;
 }
 
 /* Animation */
-@keyframes moveBg {
+@keyframes purpleMove {
   0% {
     background-position: 0% 50%;
   }
@@ -32,19 +27,39 @@ body {
   }
 }
 
-/* Image styling */
+/* Heading */
+h1 {
+  color: #c084fc;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Paragraph */
+p {
+  color: #e9d5ff;
+  font-size: 1.1rem;
+}
+
+/* Image */
 img {
   border-radius: 15px;
-  margin: 15px;
-  border: 2px solid white;
+  margin-top: 20px;
+  border: 2px solid #c084fc;
+}
+
+/* Section headings */
+h2 {
+  margin-top: 30px;
+  color: #d8b4fe;
 }
 
 /* Links */
 a {
-  color: #60a5fa;
+  color: #a78bfa;
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: white;
 }
