@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .App {
@@ -12,75 +12,98 @@ body {
   position: relative;
   padding: 40px;
 
-  /* 🌌 Deep Purple Universe Background */
+  /* 🌌 Deep cosmic purple background */
   background: radial-gradient(circle at center,
-    #0b0014,
-    #140022,
+    #0a0015,
+    #12001f,
     #1a0033,
-    #0a0010
+    #000000
   );
 }
 
-/* ⭐ STAR LAYER 1 */
+/* ⭐ BIG BRIGHT STAR LAYER */
 .App::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity: 0.15;
-  animation: moveStars 120s linear infinite;
+
+  background-image:
+    radial-gradient(white 2px, transparent 2px),
+    radial-gradient(#c084fc 1.5px, transparent 1.5px);
+
+  background-size: 80px 80px, 120px 120px;
+  background-position: 0 0, 40px 60px;
+
+  opacity: 0.35;
+  animation: starMove 60s linear infinite;
 }
 
-/* ⭐ STAR LAYER 2 */
+/* ⭐ TWINKLING SMALL STARS */
 .App::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(white 0.8px, transparent 0.8px);
-  background-size: 100px 100px;
-  opacity: 0.1;
-  animation: moveStars 200s linear infinite;
+
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+
+  opacity: 0.25;
+  animation: twinkle 3s infinite alternate;
 }
 
-/* keep content above stars */
+/* content above stars */
 .App > * {
   position: relative;
   z-index: 2;
 }
 
-/* slow star movement */
-@keyframes moveStars {
+/* slow galaxy movement */
+@keyframes starMove {
   from {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-50%);
+    transform: translateY(-60%);
+  }
+}
+
+/* twinkling effect */
+@keyframes twinkle {
+  0% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1.05);
   }
 }
 
 /* text styling */
 h1 {
-  color: #c084fc;
+  color: #d8b4fe;
+  text-shadow: 0 0 10px #a855f7;
 }
 
 h2 {
-  color: #d8b4fe;
+  color: #c084fc;
 }
 
 p {
   color: #e9d5ff;
 }
 
+/* image styling */
 img {
   border-radius: 15px;
   border: 2px solid #a855f7;
   margin-top: 20px;
+  box-shadow: 0 0 15px #6b21a8;
 }
 
+/* links */
 a {
   color: #a78bfa;
-  text-decoration: none;
 }
 
 a:hover {
