@@ -4,44 +4,11 @@
   padding: 40px;
   font-family: Arial, sans-serif;
 
-  /* 🌑 Dark + Blue Gradient */
   background: linear-gradient(135deg, #0f172a, #1e3c72, #2a5298);
   color: white;
 }
 
-/* Heading */
-h1 {
-  color: #60a5fa;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-/* Paragraph */
-p {
-  color: #e2e8f0;
-  font-size: 1.1rem;
-}
-
-/* Image */
 img {
   border-radius: 15px;
-  margin-top: 20px;
-  border: 2px solid #60a5fa;
-}
-
-/* Section headings */
-h2 {
-  margin-top: 30px;
-  color: #93c5fd;
-}
-
-/* Links */
-a {
-  color: #38bdf8;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  color: white;
+  margin: 10px;
 }
