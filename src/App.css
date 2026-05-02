@@ -1,32 +1,21 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .App {
   min-height: 100vh;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  color: white;
-
-  /* animated gradient background */
-  background: linear-gradient(-45deg, #0f172a, #1e3c72, #2a5298, #0f172a);
-  background-size: 400% 400%;
-  animation: bgMove 8s ease infinite;
-
-  padding: 40px;
+  background: radial-gradient(circle, #020617, #000);
+  overflow: hidden;
+  position: relative;
 }
 
-@keyframes bgMove {
-  0% {
-    background-position: 0% 50%;
-  }
+/* stars */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+}
 
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
 }
