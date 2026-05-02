@@ -1,21 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   min-height: 100vh;
-  background: radial-gradient(circle, #020617, #000);
-  overflow: hidden;
-  position: relative;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
+
+  /* animated gradient background */
+  background: linear-gradient(-45deg, #0f172a, #1e3c72, #2a5298, #0f172a);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+
+  padding: 40px;
 }
 
-/* stars */
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  animation: twinkle 2s infinite alternate;
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-@keyframes twinkle {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
+/* image style */
+img {
+  border-radius: 15px;
+  margin: 15px;
+  border: 2px solid white;
+}
+
+/* links */
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
