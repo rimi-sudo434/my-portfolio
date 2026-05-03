@@ -22,9 +22,9 @@ function App() {
               alt="gif"
             />
 
-            <h1 className="nameBlink glowText">✨ Rimita Ghosh ✨</h1>
+            <h1 className="nameGlow">✨ Rimita Ghosh ✨</h1>
 
-            <h2 className="role typewriter">
+            <h2 className="role">
               Web Developer • Tech Enthusiast
             </h2>
 
