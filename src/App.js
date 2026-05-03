@@ -22,7 +22,7 @@ function App() {
               alt="gif"
             />
 
-            <h1 className="nameGlow">✨ Rimita Ghosh ✨</h1>
+            <h1 className="nameGlow"> Rimita Ghosh </h1>
 
             <h2 className="role">
               Web Developer • Tech Enthusiast
@@ -65,7 +65,7 @@ function App() {
       {galaxy && (
         <div className="universe">
 
-          <h1 className="spaceName glowText">✨ Rimita Ghosh ✨</h1>
+          <h1 className="spaceName glowText"> Rimita Ghosh </h1>
 
           <button className="backBtn fixBtn" onClick={() => setGalaxy(false)}>
             Exit
