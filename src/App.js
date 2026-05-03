@@ -23,6 +23,7 @@ function App() {
             />
 
             <h1 className="nameBlink">✨ Rimita Ghosh ✨</h1>
+
             <h2 className="role">Web Developer • Tech Enthusiast</h2>
 
             <div className="card about">
@@ -80,7 +81,14 @@ function App() {
             <div className="orbit o3"><div className="planet p3"></div></div>
             <div className="orbit o4"><div className="planet p4"></div></div>
             <div className="orbit o5"><div className="planet p5"></div></div>
-            <div className="orbit o6"><div className="planet p6"></div></div>
+
+            {/* SATURN */}
+            <div className="orbit o6">
+              <div className="saturn">
+                <div className="ring"></div>
+              </div>
+            </div>
+
             <div className="orbit o7"><div className="planet p7"></div></div>
             <div className="orbit o8"><div className="planet p8"></div></div>
 
