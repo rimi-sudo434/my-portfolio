@@ -4,17 +4,34 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= HOME ================= */
+/* ================= BASE PAGE ================= */
 
-.home {
+.App {
   min-height: 100vh;
-  background: #0b0015;
   color: white;
   text-align: center;
-  padding: 30px;
 }
 
-.blinkName {
+/* DARK PURPLE BACKGROUND */
+.dark {
+  background: radial-gradient(circle, #1a0033, #000);
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: #7c3aed;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* BLINK NAME */
+.blink {
   animation: blink 1s infinite;
 }
 
@@ -23,94 +40,87 @@ body {
   50% { opacity: 0.2; }
 }
 
-.btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #7c3aed;
-  border: none;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-}
+/* ================= PAGE 3 BACKGROUND ================= */
 
-/* ================= GALAXY ================= */
-
-.universe {
-  position: relative;
+.galaxy-bg {
   min-height: 100vh;
-  background: radial-gradient(circle, #000010, #000000);
+  position: relative;
+  background: radial-gradient(circle, #120022, #000);
   overflow: hidden;
 }
 
-/* STAR FIELD */
+/* moving galaxy effect */
+.moving-stars {
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: move 90s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes move {
+  from { transform: translate(0,0); }
+  to { transform: translate(-40%,-30%); }
+}
+
+/* ================= FINAL GALAXY ================= */
+
+.galaxy {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle, #0b0015, #000000);
+  overflow: hidden;
+}
+
+/* stars */
 .stars {
   position: absolute;
   width: 300%;
   height: 300%;
   background: radial-gradient(white 1px, transparent 1px);
   background-size: 60px 60px;
-  animation: moveStars 120s linear infinite;
+  animation: drift 120s linear infinite;
   opacity: 0.5;
 }
 
-@keyframes moveStars {
+@keyframes drift {
   from { transform: translate(0,0); }
   to { transform: translate(-30%,-40%); }
 }
 
-/* NEBULA */
+/* nebula purple glow */
 .nebula {
   position: absolute;
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at center,
-    rgba(139, 92, 246, 0.2),
+    rgba(139, 92, 246, 0.3),
     transparent 60%
   );
-  animation: pulse 6s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%,100% { opacity: 0.3; }
-  50% { opacity: 0.7; }
-}
-
-/* INFO PANEL (floating glass style) */
-.infoPanel {
-  position: absolute;
-  top: 8%;
-  width: 100%;
-  text-align: center;
-  color: white;
-  z-index: 10;
-}
-
-.infoPanel h2 {
-  color: #d8b4fe;
-  margin-top: 10px;
-}
-
-.infoPanel p {
-  color: #e5e7eb;
-}
-
-/* SPACE NAME */
+/* NAME */
 .spaceName {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  color: white;
   animation: blink 1s infinite;
 }
 
 /* BACK BUTTON */
 .backBtn {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  padding: 8px 12px;
+  top: 20px;
+  left: 20px;
   background: #a855f7;
   border: none;
+  padding: 8px 12px;
   color: white;
   border-radius: 8px;
   cursor: pointer;
-  z-index: 20;
 }
 
 /* EARTH */
@@ -162,7 +172,7 @@ body {
   top: 50%;
   left: 50%;
   background: red;
-  animation: orbit1 6s linear infinite;
+  animation: o1 6s linear infinite;
 }
 
 .p2 {
@@ -171,7 +181,7 @@ body {
   top: 50%;
   left: 50%;
   background: green;
-  animation: orbit2 10s linear infinite;
+  animation: o2 10s linear infinite;
 }
 
 .p3 {
@@ -180,20 +190,20 @@ body {
   top: 50%;
   left: 50%;
   background: yellow;
-  animation: orbit3 14s linear infinite;
+  animation: o3 14s linear infinite;
 }
 
-@keyframes orbit1 {
+@keyframes o1 {
   from { transform: rotate(0deg) translateX(80px); }
   to { transform: rotate(360deg) translateX(80px); }
 }
 
-@keyframes orbit2 {
+@keyframes o2 {
   from { transform: rotate(0deg) translateX(130px); }
   to { transform: rotate(360deg) translateX(130px); }
 }
 
-@keyframes orbit3 {
+@keyframes o3 {
   from { transform: rotate(0deg) translateX(180px); }
   to { transform: rotate(360deg) translateX(180px); }
 }
