@@ -34,7 +34,7 @@ function App() {
             <div className="card skills">
               <h3>💻 Skills</h3>
               <p>C, C++, Java, Python, JavaScript</p>
-              <p>React Native, Flutter</p>
+              <p>React, Flutter</p>
             </div>
 
             <div className="card contact">
@@ -63,7 +63,7 @@ function App() {
       {galaxy && (
         <div className="universe">
 
-          <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
+          <h1 className="spaceName">✨ Solar System ✨</h1>
 
           <button className="backBtn" onClick={() => setGalaxy(false)}>
             Exit
@@ -76,11 +76,30 @@ function App() {
 
             <div className="sun"></div>
 
-            <div className="orbit o1"><div className="planet p1"></div></div>
-            <div className="orbit o2"><div className="planet p2"></div></div>
-            <div className="orbit o3"><div className="planet p3"></div></div>
-            <div className="orbit o4"><div className="planet p4"></div></div>
-            <div className="orbit o5"><div className="planet p5"></div></div>
+            {/* MERCURY */}
+            <div className="orbit o1">
+              <div className="planet mercury"></div>
+            </div>
+
+            {/* VENUS */}
+            <div className="orbit o2">
+              <div className="planet venus"></div>
+            </div>
+
+            {/* EARTH */}
+            <div className="orbit o3">
+              <div className="planet earth"></div>
+            </div>
+
+            {/* MARS */}
+            <div className="orbit o4">
+              <div className="planet mars"></div>
+            </div>
+
+            {/* JUPITER */}
+            <div className="orbit o5">
+              <div className="planet jupiter"></div>
+            </div>
 
             {/* SATURN */}
             <div className="orbit o6">
@@ -89,8 +108,15 @@ function App() {
               </div>
             </div>
 
-            <div className="orbit o7"><div className="planet p7"></div></div>
-            <div className="orbit o8"><div className="planet p8"></div></div>
+            {/* URANUS */}
+            <div className="orbit o7">
+              <div className="planet uranus"></div>
+            </div>
+
+            {/* NEPTUNE */}
+            <div className="orbit o8">
+              <div className="planet neptune"></div>
+            </div>
 
           </div>
 
