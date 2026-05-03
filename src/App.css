@@ -1,252 +1,74 @@
-body {
-  margin: 0;
-  font-family: Arial;
+import { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [galaxy, setGalaxy] = useState(false);
+
+  return (
+    <div className="App">
+
+      {/* ================= HOME ================= */}
+      {!galaxy && (
+        <div className="home">
+
+          {/* GIF */}
+          <img
+            className="gif"
+            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTB4Zm5ucHJhMG9samk2bXBzdjRnMGZweDdkaDk1MDZ5MDV1ZGlzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svkIWwpVYr/giphy.gif"
+            alt="gif"
+          />
+
+          <h1 className="nameBlink">✨ Rimita Ghosh ✨</h1>
+          <h2 className="role">Web Developer • Tech Enthusiast</h2>
+
+          <button className="galaxyBtn" onClick={() => setGalaxy(true)}>
+            🌌 Explore My Universe
+          </button>
+
+        </div>
+      )}
+
+      {/* ================= UNIVERSE ================= */}
+      {galaxy && (
+        <div className="universe">
+
+          <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
+
+          <button className="backBtn" onClick={() => setGalaxy(false)}>
+            Exit
+          </button>
+
+          {/* BACKGROUND */}
+          <div className="stars"></div>
+
+          {/* SOLAR SYSTEM STYLE */}
+          <div className="solar">
+
+            <div className="sun"></div>
+
+            <div className="orbit o1"><div className="planet p1"></div></div>
+            <div className="orbit o2"><div className="planet p2"></div></div>
+            <div className="orbit o3"><div className="planet p3"></div></div>
+            <div className="orbit o4"><div className="planet p4"></div></div>
+
+            {/* ASTEROID BELT */}
+            <div className="belt"></div>
+
+            <div className="orbit o5"><div className="planet p5"></div></div>
+            <div className="orbit o6"><div className="planet p6"></div></div>
+            <div className="orbit o7"><div className="planet p7"></div></div>
+            <div className="orbit o8"><div className="planet p8"></div></div>
+
+          </div>
+
+          {/* COMET */}
+          <div className="comet"></div>
+
+        </div>
+      )}
+
+    </div>
+  );
 }
 
-/* ================= HOME ================= */
-
-.home {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  background: linear-gradient(-45deg, #050010, #1a0033, #2b0a4a, #000);
-  background-size: 400% 400%;
-  animation: bgMove 10s ease infinite;
-
-  position: relative;
-  overflow: hidden;
-}
-
-/* moving stars */
-.home::before {
-  content: "";
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: moveStars 120s linear infinite;
-  opacity: 0.3;
-}
-
-.home > * {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes moveStars {
-  to { transform: translate(-40%,-30%); }
-}
-
-.gif {
-  width: 160px;
-  border-radius: 15px;
-}
-
-.nameBlink {
-  color: white;
-  animation: blink 1.5s infinite;
-}
-
-.role {
-  color: #d8b4fe;
-}
-
-@keyframes blink {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-.box {
-  width: 60%;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-}
-
-.about { background: rgba(236, 72, 153, 0.2); }
-.skills { background: rgba(96, 165, 250, 0.2); }
-.contact { background: rgba(52, 211, 153, 0.2); }
-
-a {
-  display: block;
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-a:hover {
-  color: white;
-}
-
-/* BUTTON */
-.galaxyBtn {
-  margin-top: 20px;
-  padding: 15px 25px;
-  font-size: 18px;
-  background: linear-gradient(45deg, #7c3aed, #ec4899);
-  border: none;
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  50% { transform: scale(1.1); }
-}
-
-/* ================= GALAXY ================= */
-
-.universe {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  background: radial-gradient(circle, #0b0015, #000);
-}
-
-.spaceName {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  animation: blink 2s infinite;
-  z-index: 10;
-}
-
-.backBtn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 9999;
-  background: #a855f7;
-  border: none;
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* BACKGROUND */
-.stars {
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(white 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: moveStars 120s linear infinite;
-}
-
-.nebula {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(139,92,246,0.3), transparent 60%);
-}
-
-/* SOLAR SYSTEM */
-.solarSystem {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.sun {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle, yellow, orange);
-  box-shadow: 0 0 50px yellow;
-}
-
-.orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
-
-.planet {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-}
-
-/* ORBITS */
-.orbit1 { width: 120px; height: 120px; animation: rotate 5s linear infinite; }
-.orbit2 { width: 180px; height: 180px; animation: rotate 8s linear infinite; }
-.orbit3 { width: 240px; height: 240px; animation: rotate 10s linear infinite; }
-.orbit4 { width: 300px; height: 300px; animation: rotate 14s linear infinite; }
-.orbit5 { width: 380px; height: 380px; animation: rotate 20s linear infinite; }
-
-/* PLANETS */
-.mercury { width: 10px; height: 10px; background: gray; }
-.venus   { width: 14px; height: 14px; background: orange; }
-.earth   { width: 16px; height: 16px; background: blue; }
-.mars    { width: 14px; height: 14px; background: red; }
-.jupiter { width: 28px; height: 28px; background: #d97706; }
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* ROCKET */
-.rocket {
-  position: absolute;
-  bottom: -100px;
-  left: 10%;
-  width: 40px;
-  height: 80px;
-  background: linear-gradient(white, gray);
-  border-radius: 20px;
-  animation: launch 6s infinite;
-}
-
-.rocket::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 20px;
-  background: orange;
-  border-radius: 50%;
-}
-
-@keyframes launch {
-  0% { bottom: -100px; left: 10%; }
-  50% { bottom: 50%; left: 50%; }
-  100% { bottom: 110%; left: 80%; }
-}
-
-/* SHOOTING STAR */
-.shootingStar {
-  position: absolute;
-  width: 3px;
-  height: 80px;
-  background: white;
-  top: -100px;
-  left: 70%;
-  animation: shoot 3s linear infinite;
-}
-
-@keyframes shoot {
-  to { transform: translateY(900px); opacity: 0; }
-}
+export default App;
