@@ -48,6 +48,8 @@ body {
   border-radius: 12px;
 }
 
+/* TEXT ANIMATIONS */
+
 .nameBlink {
   color: white;
   animation: blink 1.5s infinite;
@@ -61,6 +63,25 @@ body {
   color: #d8b4fe;
 }
 
+.glowText {
+  text-shadow: 0 0 10px #a855f7, 0 0 20px #38bdf8;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
+  width: fit-content;
+  animation: typing 3s steps(30) infinite alternate;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* CARD */
+
 .card {
   width: 90%;
   max-width: 260px;
@@ -73,11 +94,22 @@ body {
   text-align: center;
 }
 
-a {
-  display: block;
-  color: #38bdf8;
-  text-decoration: none;
+/* FADE ANIMATION */
+
+.fadeUp {
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
 }
+
+.delay1 { animation-delay: 0.3s; }
+.delay2 { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* BUTTON */
 
 .btn {
   margin-top: 15px;
@@ -87,6 +119,27 @@ a {
   border-radius: 25px;
   color: white;
   cursor: pointer;
+}
+
+.pulseBtn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* FLOAT */
+
+.floatAnim {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 /* ================= UNIVERSE ================= */
@@ -113,6 +166,11 @@ a {
   border: none;
   color: white;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.fixBtn {
+  z-index: 9999;
 }
 
 /* SOLAR SYSTEM */
@@ -150,8 +208,6 @@ a {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
-
-/* ORBITS SIZE */
 
 .o1 { width: 120px; height: 120px; animation-duration: 4s; }
 .o2 { width: 170px; height: 170px; animation-duration: 6s; }
