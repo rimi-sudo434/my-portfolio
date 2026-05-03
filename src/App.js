@@ -63,7 +63,7 @@ function App() {
       {galaxy && (
         <div className="universe">
 
-          <h1 className="spaceName">✨ Solar System ✨</h1>
+          <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
 
           <button className="backBtn" onClick={() => setGalaxy(false)}>
             Exit
