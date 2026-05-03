@@ -7,12 +7,9 @@ function App() {
   return (
     <div className="App">
 
-      {/* ================= HOME PAGE ================= */}
+      {/* ================= HOME ================= */}
       {!galaxy && (
         <div className="home">
-
-          {/* animated purple galaxy background */}
-          <div className="bgGalaxy"></div>
 
           <img
             className="gif"
@@ -20,8 +17,35 @@ function App() {
             alt="gif"
           />
 
-          <h1 className="title">Hi, I am Rimita Ghosh ✨</h1>
+          <h1 className="nameBlink">✨ Rimita Ghosh ✨</h1>
           <h2 className="role">Web Developer • Tech Enthusiast</h2>
+
+          <div className="box about">
+            <h3>About Me</h3>
+            <p>I enjoy building projects and improving my skills through learning.</p>
+          </div>
+
+          <div className="box skills">
+            <h3>Skills</h3>
+            <p>C, C++, Java, Python, JavaScript</p>
+            <p>React Native, Flutter</p>
+          </div>
+
+          <div className="box contact">
+            <h3>Contact</h3>
+
+            <a href="mailto:rimitaghosh477@gmail.com">
+              📧 Email Me
+            </a>
+
+            <a
+              href="https://github.com/rimi-sudo434"
+              target="_blank"
+              rel="noreferrer"
+            >
+              💻 GitHub Profile
+            </a>
+          </div>
 
           <button className="galaxyBtn" onClick={() => setGalaxy(true)}>
             🌌 Open My Galaxy
@@ -30,44 +54,35 @@ function App() {
         </div>
       )}
 
-      {/* ================= GALAXY PAGE ================= */}
+      {/* ================= GALAXY ================= */}
       {galaxy && (
         <div className="universe">
 
-          {/* TOP UI */}
-          <div className="uiTop">
-            <h1 className="name">✨ Rimita Ghosh ✨</h1>
-
-            <button className="exitBtn" onClick={() => setGalaxy(false)}>
-              Exit Galaxy
-            </button>
-          </div>
+          {/* EXIT BUTTON */}
+          <button className="backBtn" onClick={() => setGalaxy(false)}>
+            Exit Galaxy
+          </button>
 
           {/* CENTER NAME */}
           <div className="centerName">
-            Rimita Ghosh
+            ✨ Rimita Ghosh ✨
           </div>
 
-          {/* SPACE LAYERS */}
+          {/* BACKGROUND */}
           <div className="stars"></div>
           <div className="nebula"></div>
 
-          {/* SUN + PLANETS */}
-          <div className="solarSystem">
-            <div className="sun"></div>
-          </div>
-
+          {/* SPACE OBJECTS */}
+          <div className="sun"></div>
           <div className="earth"></div>
           <div className="moon"></div>
-          <div className="mars"></div>
-          <div className="jupiter"></div>
 
-          {/* SPACE EFFECTS */}
-          <div className="asteroids"></div>
+          <div className="planet p1"></div>
+          <div className="planet p2"></div>
+          <div className="planet p3"></div>
+          <div className="planet p4"></div>
+
           <div className="shootingStar"></div>
-
-          {/* GIFT BUTTON */}
-          <button className="giftBtn">🎁 Gift</button>
 
         </div>
       )}
