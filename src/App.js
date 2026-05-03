@@ -25,7 +25,7 @@ function App() {
             <h1 className="nameGlow">Rimita Ghosh</h1>
 
             <h2 className="role">
-              Web Developer<span className="dot">•</span>Tech Enthusiast
+              Web Developer <span className="dot">•</span> Tech Enthusiast
             </h2>
 
             <div className="card about fadeUp">
@@ -66,7 +66,7 @@ function App() {
         <div className="universe">
 
           {/* 🔥 UPDATED TITLE */}
-          <h2 className="animatedTitle">Rimita Ghosh</h2>
+          <h1 className="animatedTitle">Rimita Ghosh</h1>
 
           <button className="backBtn fixBtn" onClick={() => setGalaxy(false)}>
             Exit
