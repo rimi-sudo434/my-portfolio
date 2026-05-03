@@ -33,11 +33,7 @@ function App() {
 
           <div className="box contact">
             <h3>Contact</h3>
-
-            <a href="mailto:rimitaghosh477@gmail.com">
-              📧 Email Me
-            </a>
-
+            <a href="mailto:rimitaghosh477@gmail.com">📧 Email Me</a>
             <a
               href="https://github.com/rimi-sudo434"
               target="_blank"
@@ -58,30 +54,47 @@ function App() {
       {galaxy && (
         <div className="universe">
 
-          {/* EXIT BUTTON */}
+          <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
+
           <button className="backBtn" onClick={() => setGalaxy(false)}>
             Exit Galaxy
           </button>
-
-          {/* CENTER NAME */}
-          <div className="centerName">
-            ✨ Rimita Ghosh ✨
-          </div>
 
           {/* BACKGROUND */}
           <div className="stars"></div>
           <div className="nebula"></div>
 
-          {/* SPACE OBJECTS */}
-          <div className="sun"></div>
-          <div className="earth"></div>
-          <div className="moon"></div>
+          {/* SOLAR SYSTEM */}
+          <div className="solarSystem">
 
-          <div className="planet p1"></div>
-          <div className="planet p2"></div>
-          <div className="planet p3"></div>
-          <div className="planet p4"></div>
+            <div className="sun"></div>
 
+            <div className="orbit orbit1">
+              <div className="planet mercury"></div>
+            </div>
+
+            <div className="orbit orbit2">
+              <div className="planet venus"></div>
+            </div>
+
+            <div className="orbit orbit3">
+              <div className="planet earth"></div>
+            </div>
+
+            <div className="orbit orbit4">
+              <div className="planet mars"></div>
+            </div>
+
+            <div className="orbit orbit5">
+              <div className="planet jupiter"></div>
+            </div>
+
+          </div>
+
+          {/* ROCKET */}
+          <div className="rocket"></div>
+
+          {/* SHOOTING STAR */}
           <div className="shootingStar"></div>
 
         </div>
