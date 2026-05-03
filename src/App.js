@@ -25,7 +25,7 @@ function App() {
             <h1 className="nameGlow">Rimita Ghosh</h1>
 
             <h2 className="role">
-              Web Developer<span className="dot">•</span>Tech Enthusiast
+              Web Developer <span className="dot">•</span> Tech Enthusiast
             </h2>
 
             <div className="card about fadeUp">
