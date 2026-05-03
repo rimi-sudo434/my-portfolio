@@ -19,7 +19,8 @@ function App() {
 
       {/* SKILLS */}
       <h2>💻 Skills</h2>
-      <p>HTML, CSS, JavaScript, React, Java, Python</p>
+      <p>Languages: C, C++, Java, Python, JavaScript  
+      Frameworks: React Native, Flutter</p>
 
       {/* CONTACT */}
       <h2>📬 Contact</h2>
