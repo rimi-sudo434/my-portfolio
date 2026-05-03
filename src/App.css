@@ -1,209 +1,32 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  overflow-x: hidden;
+/* BIG TITLE */
+.title {
+  font-size: 2.5rem;
 }
 
-/* ================= BASE PAGE ================= */
-
-.App {
-  min-height: 100vh;
-  color: white;
-  text-align: center;
+/* ROLE BIGGER */
+.role {
+  font-size: 1.8rem;
+  color: #d8b4fe;
 }
 
-/* DARK PURPLE BACKGROUND */
-.dark {
-  background: radial-gradient(circle, #1a0033, #000);
-  min-height: 100vh;
-  padding: 40px;
+/* TWINKLE EFFECT */
+.twinkle {
+  animation: twinkle 2s infinite;
 }
 
-/* BUTTON */
-.btn {
-  margin-top: 20px;
-  padding: 10px 18px;
-  background: #7c3aed;
-  border: none;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
+@keyframes twinkle {
+  0% { opacity: 1; text-shadow: 0 0 5px white; }
+  50% { opacity: 0.4; text-shadow: 0 0 20px #a855f7; }
+  100% { opacity: 1; text-shadow: 0 0 5px white; }
 }
 
-/* BLINK NAME */
-.blink {
-  animation: blink 1s infinite;
+/* FADE IN SECTIONS */
+.fade {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
-@keyframes blink {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-
-/* ================= PAGE 3 BACKGROUND ================= */
-
-.galaxy-bg {
-  min-height: 100vh;
-  position: relative;
-  background: radial-gradient(circle, #120022, #000);
-  overflow: hidden;
-}
-
-/* moving galaxy effect */
-.moving-stars {
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(white 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: move 90s linear infinite;
-  opacity: 0.3;
-}
-
-@keyframes move {
-  from { transform: translate(0,0); }
-  to { transform: translate(-40%,-30%); }
-}
-
-/* ================= FINAL GALAXY ================= */
-
-.galaxy {
-  position: relative;
-  min-height: 100vh;
-  background: radial-gradient(circle, #0b0015, #000000);
-  overflow: hidden;
-}
-
-/* stars */
-.stars {
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(white 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: drift 120s linear infinite;
-  opacity: 0.5;
-}
-
-@keyframes drift {
-  from { transform: translate(0,0); }
-  to { transform: translate(-30%,-40%); }
-}
-
-/* nebula purple glow */
-.nebula {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center,
-    rgba(139, 92, 246, 0.3),
-    transparent 60%
-  );
-}
-
-/* NAME */
-.spaceName {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  color: white;
-  animation: blink 1s infinite;
-}
-
-/* BACK BUTTON */
-.backBtn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #a855f7;
-  border: none;
-  padding: 8px 12px;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* EARTH */
-.earth {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  top: 55%;
-  left: 45%;
-  border-radius: 50%;
-  background: radial-gradient(circle, #3b82f6, #1e3a8a);
-  box-shadow: 0 0 25px #60a5fa;
-  animation: spin 12s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* SPACE STATION */
-.station {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  top: 40%;
-  left: 40%;
-  background: gray;
-  clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
-  box-shadow: 0 0 15px white;
-  animation: orbit 8s linear infinite;
-}
-
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(140px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
-}
-
-/* PLANETS */
-.planet {
-  position: absolute;
-  border-radius: 50%;
-  box-shadow: 0 0 20px #a855f7;
-}
-
-.p1 {
-  width: 60px;
-  height: 60px;
-  top: 50%;
-  left: 50%;
-  background: red;
-  animation: o1 6s linear infinite;
-}
-
-.p2 {
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  background: green;
-  animation: o2 10s linear infinite;
-}
-
-.p3 {
-  width: 50px;
-  height: 50px;
-  top: 50%;
-  left: 50%;
-  background: yellow;
-  animation: o3 14s linear infinite;
-}
-
-@keyframes o1 {
-  from { transform: rotate(0deg) translateX(80px); }
-  to { transform: rotate(360deg) translateX(80px); }
-}
-
-@keyframes o2 {
-  from { transform: rotate(0deg) translateX(130px); }
-  to { transform: rotate(360deg) translateX(130px); }
-}
-
-@keyframes o3 {
-  from { transform: rotate(0deg) translateX(180px); }
-  to { transform: rotate(360deg) translateX(180px); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
