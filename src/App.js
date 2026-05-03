@@ -22,10 +22,10 @@ function App() {
               alt="gif"
             />
 
-            <h1 className="nameGlow"> Rimita Ghosh </h1>
+            <h1 className="nameGlow">Rimita Ghosh</h1>
 
             <h2 className="role">
-              Web Developer • Tech Enthusiast
+              Web Developer <span className="dot">•</span> Tech Enthusiast
             </h2>
 
             <div className="card about fadeUp">
@@ -65,7 +65,8 @@ function App() {
       {galaxy && (
         <div className="universe">
 
-          <h1 className="spaceName glowText"> Rimita Ghosh </h1>
+          {/* 🔥 UPDATED TITLE */}
+          <h1 className="animatedTitle">Rimita Ghosh</h1>
 
           <button className="backBtn fixBtn" onClick={() => setGalaxy(false)}>
             Exit
