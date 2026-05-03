@@ -28,40 +28,39 @@ function App() {
           </p>
 
           <h2>📬 Contact</h2>
-
-          <p>
-            Email: <a href="mailto:rimitaghosh477@gmail.com">rimitaghosh477@gmail.com</a>
-          </p>
-
-          <p>
-            GitHub:{" "}
-            <a
-              href="https://github.com/rimi-sudo434"
-              target="_blank"
-              rel="noreferrer"
-            >
-              github.com/rimi-sudo434
-            </a>
-          </p>
+          <p>Email: rimitaghosh477@gmail.com</p>
+          <p>GitHub: github.com/rimi-sudo434</p>
 
           <button className="galaxy-btn" onClick={() => setGalaxy(true)}>
-            🌌 Open Galaxy
+            🌌 Open Galaxy Portal
           </button>
         </>
       )}
 
       {galaxy && (
-        <div className="galaxy">
-          <h1 className="blink">✨ Rimita Ghosh ✨</h1>
-          <p className="space-text">Welcome to the Galaxy Universe 🚀</p>
+        <div className="space-world">
 
-          <div className="planet planet1"></div>
-          <div className="planet planet2"></div>
-          <div className="planet planet3"></div>
+          <h1 className="space-name">✨ Rimita Ghosh ✨</h1>
+
+          <p className="space-text">
+            You have entered a different universe...
+          </p>
+
+          {/* SPACE STATION */}
+          <div className="space-station"></div>
+
+          {/* PLANETS */}
+          <div className="planet p1"></div>
+          <div className="planet p2"></div>
+          <div className="planet p3"></div>
+
+          {/* STARS */}
+          <div className="stars"></div>
 
           <button className="galaxy-btn" onClick={() => setGalaxy(false)}>
-            🔙 Back
+            🚪 Exit Galaxy
           </button>
+
         </div>
       )}
 
