@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react";
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [galaxy, setGalaxy] = useState(false);
-
-  const [showTitle, setShowTitle] = useState(false);
-  const [showRole, setShowRole] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
-  const [showSkills, setShowSkills] = useState(false);
-  const [showContact, setShowContact] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setShowTitle(true), 500);
-    setTimeout(() => setShowRole(true), 1500);
-    setTimeout(() => setShowAbout(true), 2500);
-    setTimeout(() => setShowSkills(true), 3500);
-    setTimeout(() => setShowContact(true), 4500);
-  }, []);
 
   return (
     <div className="App">
@@ -25,47 +11,50 @@ function App() {
       {!galaxy && (
         <div className="home">
 
-          {showTitle && (
-            <h1 className="twinkle title">
-              Hi, I am Rimita Ghosh
-            </h1>
-          )}
+          {/* GIF (RESTORED) */}
+          <img
+            className="gif"
+            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTB4Zm5ucHJhMG9samk2bXBzdjRnMGZweDdkaDk1MDZ5MDV1ZGlzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svkIWwpVYr/giphy.gif"
+            alt="gif"
+          />
 
-          {showRole && (
-            <h2 className="twinkle role">
-              Web Developer • Tech Enthusiast
-            </h2>
-          )}
+          {/* NAME CENTER */}
+          <h1 className="nameBlink">✨ Rimita Ghosh ✨</h1>
+          <h2 className="role">Web Developer • Tech Enthusiast</h2>
 
-          {showAbout && (
-            <div className="fade">
-              <h2>🌱 About Me</h2>
-              <p>
-                I enjoy building projects and continuously improving through learning.
-              </p>
-            </div>
-          )}
+          {/* ABOUT */}
+          <div className="box about">
+            <h3>About Me</h3>
+            <p>I enjoy building projects and improving my skills through learning.</p>
+          </div>
 
-          {showSkills && (
-            <div className="fade">
-              <h2>💻 Skills</h2>
-              <p>
-                C, C++, Java, Python, JavaScript<br />
-                React Native, Flutter
-              </p>
-            </div>
-          )}
+          {/* SKILLS */}
+          <div className="box skills">
+            <h3>Skills</h3>
+            <p>C, C++, Java, Python, JavaScript</p>
+            <p>React Native, Flutter</p>
+          </div>
 
-          {showContact && (
-            <div className="fade">
-              <h2>📬 Contact</h2>
-              <p>Email: rimitaghosh477@gmail.com</p>
-              <p>GitHub: github.com/rimi-sudo434</p>
-            </div>
-          )}
+          {/* CONTACT */}
+          <div className="box contact">
+            <h3>Contact</h3>
 
-          <button className="btn" onClick={() => setGalaxy(true)}>
-            Open My Galaxy
+            <a href="mailto:rimitaghosh477@gmail.com">
+              📧 Email Me
+            </a>
+
+            <a
+              href="https://github.com/rimi-sudo434"
+              target="_blank"
+              rel="noreferrer"
+            >
+              💻 GitHub Profile
+            </a>
+          </div>
+
+          {/* BUTTON */}
+          <button className="galaxyBtn" onClick={() => setGalaxy(true)}>
+            🌌 Open My Galaxy
           </button>
 
         </div>
@@ -75,23 +64,29 @@ function App() {
       {galaxy && (
         <div className="universe">
 
-          <div className="infoPanel">
-            <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
-          </div>
+          {/* NAME TOP CENTER */}
+          <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
 
           <button className="backBtn" onClick={() => setGalaxy(false)}>
             Exit Galaxy
           </button>
 
+          {/* BACKGROUND */}
           <div className="stars"></div>
           <div className="nebula"></div>
 
+          {/* SPACE OBJECTS (MULTIPLE REALISTIC FEEL) */}
+          <div className="sun"></div>
           <div className="earth"></div>
-          <div className="station"></div>
+          <div className="moon"></div>
 
           <div className="planet p1"></div>
           <div className="planet p2"></div>
           <div className="planet p3"></div>
+          <div className="planet p4"></div>
+
+          {/* SHOOTING STAR */}
+          <div className="shootingStar"></div>
 
         </div>
       )}
