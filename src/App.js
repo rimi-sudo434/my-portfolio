@@ -25,7 +25,7 @@ function App() {
             <h1 className="nameGlow">Rimita Ghosh</h1>
 
             <h2 className="role">
-              Web Developer <span className="dot">•</span> Tech Enthusiast
+              Web Developer<span className="dot">•</span>Tech Enthusiast
             </h2>
 
             <div className="card about fadeUp">
@@ -36,7 +36,7 @@ function App() {
             <div className="card skills fadeUp delay1">
               <h3>💻 Skills</h3>
               <p>C, C++, Java, Python, JavaScript</p>
-              <p>React, Flutter</p>
+              <p>React Native, Flutter</p>
             </div>
 
             <div className="card contact fadeUp delay2">
