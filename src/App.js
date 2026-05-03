@@ -11,7 +11,6 @@ function App() {
       {!galaxy && (
         <div className="home">
 
-          {/* GIF */}
           <img
             className="gif"
             src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTB4Zm5ucHJhMG9samk2bXBzdjRnMGZweDdkaDk1MDZ5MDV1ZGlzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svkIWwpVYr/giphy.gif"
@@ -20,6 +19,25 @@ function App() {
 
           <h1 className="nameBlink">✨ Rimita Ghosh ✨</h1>
           <h2 className="role">Web Developer • Tech Enthusiast</h2>
+
+          <div className="box about">
+            <h3>About Me</h3>
+            <p>I enjoy building projects and improving my skills through learning.</p>
+          </div>
+
+          <div className="box skills">
+            <h3>Skills</h3>
+            <p>C, C++, Java, Python, JavaScript</p>
+            <p>React Native, Flutter</p>
+          </div>
+
+          <div className="box contact">
+            <h3>Contact</h3>
+            <a href="mailto:rimitaghosh477@gmail.com">📧 Email Me</a>
+            <a href="https://github.com/rimi-sudo434" target="_blank" rel="noreferrer">
+              💻 GitHub Profile
+            </a>
+          </div>
 
           <button className="galaxyBtn" onClick={() => setGalaxy(true)}>
             🌌 Explore My Universe
@@ -38,10 +56,9 @@ function App() {
             Exit
           </button>
 
-          {/* BACKGROUND */}
           <div className="stars"></div>
+          <div className="nebula"></div>
 
-          {/* SOLAR SYSTEM STYLE */}
           <div className="solar">
 
             <div className="sun"></div>
@@ -51,7 +68,6 @@ function App() {
             <div className="orbit o3"><div className="planet p3"></div></div>
             <div className="orbit o4"><div className="planet p4"></div></div>
 
-            {/* ASTEROID BELT */}
             <div className="belt"></div>
 
             <div className="orbit o5"><div className="planet p5"></div></div>
@@ -61,7 +77,6 @@ function App() {
 
           </div>
 
-          {/* COMET */}
           <div className="comet"></div>
 
         </div>
