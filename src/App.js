@@ -18,28 +18,34 @@ function App() {
 
             <img
               className="gif"
-              src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTB4Zm5ucHJhMG9samk2bXBzdjRnMGZweDdkaDk1MDZ5MDV1ZGlzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svkIWwpVYr/giphy.gif"
+              src="https://media4.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif"
               alt="gif"
             />
 
             <h1 className="nameBlink">✨ Rimita Ghosh ✨</h1>
             <h2 className="role">Web Developer • Tech Enthusiast</h2>
 
-            <div className="card">
-              <h3>About Me</h3>
+            <div className="card about">
+              <h3>🌱 About Me</h3>
               <p>I enjoy building projects and improving my skills through learning.</p>
             </div>
 
-            <div className="card">
-              <h3>Skills</h3>
+            <div className="card skills">
+              <h3>💻 Skills</h3>
               <p>C, C++, Java, Python, JavaScript</p>
               <p>React Native, Flutter</p>
             </div>
 
-            <div className="card">
-              <h3>Contact</h3>
+            <div className="card contact">
+              <h3>📬 Contact</h3>
+
               <a href="mailto:rimitaghosh477@gmail.com">📧 Email Me</a>
-              <a href="https://github.com/rimi-sudo434" target="_blank" rel="noreferrer">
+
+              <a
+                href="https://github.com/rimi-sudo434"
+                target="_blank"
+                rel="noreferrer"
+              >
                 💻 GitHub Profile
               </a>
             </div>
