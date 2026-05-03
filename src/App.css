@@ -1,111 +1,79 @@
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 .App {
-  min-height: 100vh;
   text-align: center;
   font-family: Arial, sans-serif;
   color: white;
-  position: relative;
-  padding: 40px;
-
-  /* 🌌 Deep cosmic purple background */
-  background: radial-gradient(circle at center,
-    #0a0015,
-    #12001f,
-    #1a0033,
-    #000000
-  );
+  min-height: 100vh;
+  padding: 30px;
+  background: #0b0015;
 }
 
-/* ⭐ BIG BRIGHT STAR LAYER */
-.App::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image:
-    radial-gradient(white 2px, transparent 2px),
-    radial-gradient(#c084fc 1.5px, transparent 1.5px);
-
-  background-size: 80px 80px, 120px 120px;
-  background-position: 0 0, 40px 60px;
-
-  opacity: 0.35;
-  animation: starMove 60s linear infinite;
-}
-
-/* ⭐ TWINKLING SMALL STARS */
-.App::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-
-  opacity: 0.25;
-  animation: twinkle 3s infinite alternate;
-}
-
-/* content above stars */
-.App > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* slow galaxy movement */
-@keyframes starMove {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-60%);
-  }
-}
-
-/* twinkling effect */
-@keyframes twinkle {
-  0% {
-    opacity: 0.15;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0.4;
-    transform: scale(1.05);
-  }
-}
-
-/* text styling */
-h1 {
-  color: #d8b4fe;
-  text-shadow: 0 0 10px #a855f7;
-}
-
-h2 {
-  color: #c084fc;
-}
-
-p {
-  color: #e9d5ff;
-}
-
-/* image styling */
-img {
-  border-radius: 15px;
-  border: 2px solid #a855f7;
+/* Button */
+.galaxy-btn {
   margin-top: 20px;
-  box-shadow: 0 0 15px #6b21a8;
-}
-
-/* links */
-a {
-  color: #a78bfa;
-}
-
-a:hover {
+  padding: 10px 20px;
+  border: none;
+  background: #8b5cf6;
   color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.galaxy-btn:hover {
+  background: #a855f7;
+}
+
+/* Galaxy mode */
+.galaxy {
+  height: 100vh;
+  background: radial-gradient(circle, #1a0033, #000);
+  position: relative;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+/* blinking name */
+.blink {
+  color: #fff;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* space text */
+.space-text {
+  color: #d8b4fe;
+}
+
+/* planets */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff, #8b5cf6);
+  box-shadow: 0 0 20px #a855f7;
+}
+
+.planet1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+}
+
+.planet2 {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  left: 70%;
+}
+
+.planet3 {
+  width: 60px;
+  height: 60px;
+  top: 40%;
+  left: 50%;
 }
