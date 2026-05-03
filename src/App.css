@@ -12,7 +12,6 @@ body {
   overflow: hidden;
 }
 
-/* BACKGROUND */
 .stars {
   position: absolute;
   width: 300%;
@@ -21,7 +20,6 @@ body {
   background-size: 60px 60px;
   animation: moveStars 120s linear infinite;
   opacity: 0.6;
-  pointer-events: none;
 }
 
 @keyframes moveStars {
@@ -33,14 +31,11 @@ body {
   width: 100%;
   height: 100%;
   background: radial-gradient(circle, rgba(139,92,246,0.4), transparent 60%);
-  pointer-events: none;
 }
 
-/* CONTENT CENTER */
 .content {
   position: relative;
   z-index: 2;
-
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -48,14 +43,11 @@ body {
   justify-content: center;
 }
 
-/* GIF */
 .gif {
   width: 130px;
   border-radius: 12px;
-  margin-bottom: 10px;
 }
 
-/* NAME */
 .nameBlink {
   color: white;
   animation: blink 1.5s infinite;
@@ -65,19 +57,10 @@ body {
   50% { opacity: 0.3; }
 }
 
-/* ROLE */
 .role {
   color: #d8b4fe;
-  animation: roleAnim 3s ease-in-out infinite;
 }
 
-@keyframes roleAnim {
-  0% { opacity: 0; transform: translateY(10px); }
-  50% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0.8; transform: translateY(-5px); }
-}
-
-/* CARD (FIXED SIZE ISSUE) */
 .card {
   width: 90%;
   max-width: 260px;
@@ -85,27 +68,17 @@ body {
   padding: 12px;
   border-radius: 10px;
   color: white;
-
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.15);
-
   text-align: center;
 }
 
-/* LINKS */
 a {
   display: block;
   color: #38bdf8;
   text-decoration: none;
-  margin: 5px;
 }
 
-a:hover {
-  color: white;
-}
-
-/* BUTTON */
 .btn {
   margin-top: 15px;
   padding: 12px 18px;
@@ -121,7 +94,6 @@ a:hover {
 .universe {
   height: 100vh;
   position: relative;
-  overflow: hidden;
 }
 
 .spaceName {
@@ -130,24 +102,21 @@ a:hover {
   width: 100%;
   text-align: center;
   color: white;
-  animation: blink 2s infinite;
 }
 
-/* EXIT */
 .backBtn {
   position: absolute;
   top: 15px;
   left: 15px;
-  z-index: 100;
   padding: 10px;
   background: #a855f7;
   border: none;
   color: white;
   border-radius: 10px;
-  cursor: pointer;
 }
 
 /* SOLAR SYSTEM */
+
 .solar {
   position: absolute;
   top: 55%;
@@ -155,20 +124,18 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
-/* SUN */
 .sun {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, orange, red);
+  border-radius: 50%;
+  box-shadow: 0 0 50px orange;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100px;
-  height: 100px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, orange, red);
-  box-shadow: 0 0 50px orange;
+  transform: translate(-50%,-50%);
 }
 
-/* ORBIT */
 .orbit {
   position: absolute;
   top: 50%;
@@ -176,9 +143,27 @@ a:hover {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   border: 1px dashed rgba(255,255,255,0.3);
+  animation: spin linear infinite;
 }
 
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ORBITS SIZE */
+
+.o1 { width: 120px; height: 120px; animation-duration: 4s; }
+.o2 { width: 170px; height: 170px; animation-duration: 6s; }
+.o3 { width: 220px; height: 220px; animation-duration: 8s; }
+.o4 { width: 270px; height: 270px; animation-duration: 10s; }
+.o5 { width: 340px; height: 340px; animation-duration: 14s; }
+.o6 { width: 410px; height: 410px; animation-duration: 18s; }
+.o7 { width: 480px; height: 480px; animation-duration: 22s; }
+.o8 { width: 550px; height: 550px; animation-duration: 26s; }
+
 /* PLANETS */
+
 .planet {
   position: absolute;
   top: 50%;
@@ -187,40 +172,34 @@ a:hover {
   border-radius: 50%;
 }
 
-/* ORBITS */
-.o1 { width: 120px; height: 120px; animation: spin 4s linear infinite; }
-.o2 { width: 170px; height: 170px; animation: spin 6s linear infinite; }
-.o3 { width: 220px; height: 220px; animation: spin 8s linear infinite; }
-.o4 { width: 270px; height: 270px; animation: spin 10s linear infinite; }
-.o5 { width: 340px; height: 340px; animation: spin 14s linear infinite; }
-.o6 { width: 410px; height: 410px; animation: spin 18s linear infinite; }
-.o7 { width: 480px; height: 480px; animation: spin 22s linear infinite; }
-.o8 { width: 550px; height: 550px; animation: spin 26s linear infinite; }
-
-@keyframes spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
+.mercury { width: 10px; height: 10px; background: gray; }
+.venus { width: 14px; height: 14px; background: orange; }
+.earth { width: 15px; height: 15px; background: #3b82f6; }
+.mars { width: 12px; height: 12px; background: red; }
+.jupiter { width: 25px; height: 25px; background: #d6a76a; }
+.uranus { width: 18px; height: 18px; background: #67e8f9; }
+.neptune { width: 18px; height: 18px; background: #1e3a8a; }
 
 /* SATURN */
+
 .saturn {
+  width: 22px;
+  height: 22px;
+  background: #d2b48c;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 100%;
-  width: 22px;
-  height: 22px;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: #d2b48c;
 }
 
 .ring {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 45px;
   height: 12px;
   border: 2px solid rgba(255,255,255,0.6);
   border-radius: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%) rotate(20deg);
 }
