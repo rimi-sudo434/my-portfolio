@@ -2,67 +2,74 @@ import { useState } from "react";
 import './App.css';
 
 function App() {
-  const [galaxy, setGalaxy] = useState(false);
+  const [page, setPage] = useState(1);
 
   return (
     <div className="App">
 
-      {/* ================= HOME ================= */}
-      {!galaxy && (
-        <div className="home">
+      {/* ================= PAGE 1 ================= */}
+      {page === 1 && (
+        <div className="page dark">
 
-          <h1 className="blinkName">✨ Rimita Ghosh ✨</h1>
-          <p>Web Developer • Tech Enthusiast</p>
+          <h1 className="blink">✨ Rimita Ghosh ✨</h1>
 
           <h2>🌱 About Me</h2>
           <p>
-            I enjoy building projects and continuously improving through learning.
+            I enjoy building projects and improving my skills through learning.
           </p>
 
-          <h2>💻 Skills</h2>
-          <p>
-            Languages: C, C++, Java, Python, JavaScript<br />
-            Frameworks: React Native, Flutter
-          </p>
-
-          <h2>📬 Contact</h2>
-          <p>Email: rimitaghosh477@gmail.com</p>
-          <p>GitHub: github.com/rimi-sudo434</p>
-
-          <button className="btn" onClick={() => setGalaxy(true)}>
-            Open My Galaxy
+          <button onClick={() => setPage(2)} className="btn">
+            Next → Skills
           </button>
 
         </div>
       )}
 
-      {/* ================= GALAXY ================= */}
-      {galaxy && (
-        <div className="universe">
+      {/* ================= PAGE 2 ================= */}
+      {page === 2 && (
+        <div className="page dark">
 
-          {/* INFO INSIDE SPACE */}
-          <div className="infoPanel">
-            <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
+          <h2>💻 Skills</h2>
+          <p>
+            C, C++, Java, Python, JavaScript<br />
+            React Native, Flutter
+          </p>
 
-            <h2>🌱 About Me</h2>
-            <p>I enjoy building projects and continuously improving through learning.</p>
+          <button onClick={() => setPage(3)} className="btn">
+            Next → Contact
+          </button>
 
-            <h2>💻 Skills</h2>
-            <p>
-              Languages: C, C++, Java, Python, JavaScript<br />
-              Frameworks: React Native, Flutter
-            </p>
+        </div>
+      )}
 
-            <h2>📬 Contact</h2>
-            <p>Email: rimitaghosh477@gmail.com</p>
-            <p>GitHub: github.com/rimi-sudo434</p>
-          </div>
+      {/* ================= PAGE 3 ================= */}
+      {page === 3 && (
+        <div className="page galaxy-bg">
 
-          <button className="backBtn" onClick={() => setGalaxy(false)}>
+          <h2>📬 Contact</h2>
+          <p>Email: rimitaghosh477@gmail.com</p>
+          <p>GitHub: github.com/rimi-sudo434</p>
+
+          <button onClick={() => setPage(4)} className="btn">
+            Open My Galaxy
+          </button>
+
+          {/* moving galaxy background */}
+          <div className="moving-stars"></div>
+
+        </div>
+      )}
+
+      {/* ================= PAGE 4 (FULL GALAXY) ================= */}
+      {page === 4 && (
+        <div className="galaxy">
+
+          <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
+
+          <button className="backBtn" onClick={() => setPage(1)}>
             Exit Galaxy
           </button>
 
-          {/* SPACE ELEMENTS */}
           <div className="stars"></div>
           <div className="nebula"></div>
 
