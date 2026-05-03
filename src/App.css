@@ -7,53 +7,85 @@ body {
 
 .home {
   height: 100vh;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+  text-align: center;
 
-/* animated purple galaxy background */
-.bgGalaxy {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, #2b0a4a, #0b0015, #000);
+  background: linear-gradient(-45deg, #050010, #1a0033, #2b0a4a, #000);
   background-size: 400% 400%;
-  animation: moveGalaxy 8s ease infinite;
-  z-index: -1;
+  animation: bgMove 10s ease infinite;
+
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes moveGalaxy {
+/* MOVING STARS */
+.home::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveStars 120s linear infinite;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.home > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes bgMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* GIF */
 .gif {
-  width: 150px;
+  width: 160px;
   border-radius: 15px;
-  margin-bottom: 10px;
 }
 
-/* TITLE */
-.title {
-  font-size: 2rem;
+.nameBlink {
   color: white;
-  animation: glow 2s infinite;
+  animation: blink 1.5s infinite;
 }
 
 .role {
   color: #d8b4fe;
 }
 
-/* BUTTON */
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.box {
+  width: 60%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.about { background: rgba(236, 72, 153, 0.2); }
+.skills { background: rgba(96, 165, 250, 0.2); }
+.contact { background: rgba(52, 211, 153, 0.2); }
+
+a {
+  display: block;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
 .galaxyBtn {
   margin-top: 20px;
   padding: 15px 25px;
@@ -76,28 +108,20 @@ body {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: radial-gradient(circle, #000010, #000);
+  background: radial-gradient(circle, #0b0015, #000);
 }
 
-/* TOP UI */
-.uiTop {
+/* EXIT BUTTON FIX */
+.backBtn {
   position: absolute;
-  width: 100%;
-  top: 10px;
-  z-index: 1000;
-  text-align: center;
-  color: white;
-}
-
-.exitBtn {
-  position: absolute;
+  top: 20px;
   left: 20px;
-  top: 10px;
-  padding: 10px;
-  background: red;
-  color: white;
+  z-index: 9999;
+  background: #a855f7;
   border: none;
-  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -106,17 +130,11 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   font-size: 3rem;
   color: white;
-  animation: glow 2s infinite;
-}
-
-/* GLOW */
-@keyframes glow {
-  0% { text-shadow: 0 0 10px #a855f7; }
-  50% { text-shadow: 0 0 30px #ec4899; }
-  100% { text-shadow: 0 0 10px #a855f7; }
+  animation: blink 1.5s infinite;
+  z-index: 10;
 }
 
 /* STARS */
@@ -130,7 +148,7 @@ body {
 }
 
 @keyframes moveStars {
-  to { transform: translate(-40%, -30%); }
+  to { transform: translate(-40%,-30%); }
 }
 
 /* NEBULA */
@@ -143,57 +161,57 @@ body {
 
 /* SUN */
 .sun {
-  width: 100px;
-  height: 100px;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 40%;
+  left: 50%;
+  border-radius: 50%;
   background: radial-gradient(circle, yellow, orange);
-  border-radius: 50%;
-  box-shadow: 0 0 50px yellow;
+  box-shadow: 0 0 40px yellow;
 }
 
-/* SIMPLE PLANETS */
-.earth, .moon, .mars, .jupiter {
+/* PLANETS */
+.earth, .moon, .planet {
   position: absolute;
   border-radius: 50%;
 }
 
-.earth { width: 40px; height: 40px; background: blue; top: 60%; left: 30%; }
-.moon { width: 20px; height: 20px; background: gray; top: 65%; left: 35%; }
-.mars { width: 30px; height: 30px; background: red; top: 40%; left: 70%; }
-.jupiter { width: 60px; height: 60px; background: orange; top: 30%; left: 20%; }
+.earth {
+  width: 60px;
+  height: 60px;
+  background: blue;
+  animation: orbit 8s linear infinite;
+}
 
-/* ASTEROIDS */
-.asteroids {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(gray 2px, transparent 2px);
-  background-size: 80px 80px;
-  opacity: 0.3;
+.moon {
+  width: 25px;
+  height: 25px;
+  background: gray;
+  animation: orbit 4s linear infinite;
+}
+
+.p1 { width: 50px; height: 50px; background: red; animation: orbit 6s linear infinite; }
+.p2 { width: 70px; height: 70px; background: green; animation: orbit 10s linear infinite; }
+.p3 { width: 40px; height: 40px; background: yellow; animation: orbit 12s linear infinite; }
+.p4 { width: 60px; height: 60px; background: purple; animation: orbit 14s linear infinite; }
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px); }
+  to { transform: rotate(360deg) translateX(120px); }
 }
 
 /* SHOOTING STAR */
 .shootingStar {
   position: absolute;
-  width: 2px;
+  width: 3px;
   height: 80px;
   background: white;
   top: -100px;
   left: 70%;
-  animation: shoot 4s linear infinite;
+  animation: shoot 3s linear infinite;
 }
 
 @keyframes shoot {
   to { transform: translateY(900px); opacity: 0; }
-}
-
-/* GIFT BUTTON */
-.giftBtn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 15px;
-  background: gold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
 }
