@@ -7,20 +7,29 @@ body {
 
 .home {
   height: 100vh;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  text-align: center;
-
-  background: linear-gradient(-45deg, #0b0015, #1a0033, #2b0a4a, #000);
-  background-size: 400% 400%;
-  animation: bgMove 10s ease infinite;
 }
 
-/* animated background */
-@keyframes bgMove {
+/* animated purple galaxy background */
+.bgGalaxy {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #2b0a4a, #0b0015, #000);
+  background-size: 400% 400%;
+  animation: moveGalaxy 8s ease infinite;
+  z-index: -1;
+}
+
+@keyframes moveGalaxy {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
@@ -28,50 +37,20 @@ body {
 
 /* GIF */
 .gif {
-  width: 160px;
+  width: 150px;
   border-radius: 15px;
   margin-bottom: 10px;
 }
 
-/* NAME CENTER */
-.nameBlink {
+/* TITLE */
+.title {
+  font-size: 2rem;
   color: white;
-  animation: blink 1.5s infinite;
+  animation: glow 2s infinite;
 }
 
 .role {
   color: #d8b4fe;
-}
-
-/* BLINK */
-@keyframes blink {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-/* BOXES */
-.box {
-  width: 60%;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-}
-
-.about { background: rgba(236, 72, 153, 0.2); }
-.skills { background: rgba(96, 165, 250, 0.2); }
-.contact { background: rgba(52, 211, 153, 0.2); }
-
-/* LINKS (REAL CLICKABLE) */
-a {
-  display: block;
-  color: #38bdf8;
-  text-decoration: none;
-  margin: 5px;
-}
-
-a:hover {
-  color: white;
 }
 
 /* BUTTON */
@@ -88,9 +67,7 @@ a:hover {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
   50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
 }
 
 /* ================= GALAXY ================= */
@@ -99,10 +76,50 @@ a:hover {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: radial-gradient(circle, #0b0015, #000);
+  background: radial-gradient(circle, #000010, #000);
 }
 
-/* stars */
+/* TOP UI */
+.uiTop {
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  z-index: 1000;
+  text-align: center;
+  color: white;
+}
+
+.exitBtn {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  padding: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* CENTER NAME */
+.centerName {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 3rem;
+  color: white;
+  animation: glow 2s infinite;
+}
+
+/* GLOW */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #a855f7; }
+  50% { text-shadow: 0 0 30px #ec4899; }
+  100% { text-shadow: 0 0 10px #a855f7; }
+}
+
+/* STARS */
 .stars {
   position: absolute;
   width: 300%;
@@ -113,11 +130,10 @@ a:hover {
 }
 
 @keyframes moveStars {
-  from { transform: translate(0,0); }
-  to { transform: translate(-40%,-30%); }
+  to { transform: translate(-40%, -30%); }
 }
 
-/* nebula */
+/* NEBULA */
 .nebula {
   position: absolute;
   width: 100%;
@@ -125,86 +141,59 @@ a:hover {
   background: radial-gradient(circle, rgba(139,92,246,0.3), transparent 60%);
 }
 
-/* NAME */
-.spaceName {
-  text-align: center;
-  color: white;
-  animation: blink 2s infinite;
-}
-
-/* BACK BUTTON */
-.backBtn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #a855f7;
-  border: none;
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-}
-
 /* SUN */
 .sun {
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  top: 40%;
-  left: 50%;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   background: radial-gradient(circle, yellow, orange);
-  box-shadow: 0 0 40px yellow;
-}
-
-/* EARTH */
-.earth {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: blue;
   border-radius: 50%;
-  animation: orbit 8s linear infinite;
+  box-shadow: 0 0 50px yellow;
 }
 
-/* MOON */
-.moon {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  background: gray;
-  border-radius: 50%;
-  animation: orbit 4s linear infinite;
-}
-
-/* PLANETS */
-.planet {
+/* SIMPLE PLANETS */
+.earth, .moon, .mars, .jupiter {
   position: absolute;
   border-radius: 50%;
 }
 
-.p1 { width: 50px; height: 50px; background: red; animation: orbit 6s linear infinite; }
-.p2 { width: 70px; height: 70px; background: green; animation: orbit 10s linear infinite; }
-.p3 { width: 40px; height: 40px; background: yellow; animation: orbit 12s linear infinite; }
-.p4 { width: 60px; height: 60px; background: purple; animation: orbit 14s linear infinite; }
+.earth { width: 40px; height: 40px; background: blue; top: 60%; left: 30%; }
+.moon { width: 20px; height: 20px; background: gray; top: 65%; left: 35%; }
+.mars { width: 30px; height: 30px; background: red; top: 40%; left: 70%; }
+.jupiter { width: 60px; height: 60px; background: orange; top: 30%; left: 20%; }
 
-/* orbit */
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(120px); }
-  to { transform: rotate(360deg) translateX(120px); }
+/* ASTEROIDS */
+.asteroids {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(gray 2px, transparent 2px);
+  background-size: 80px 80px;
+  opacity: 0.3;
 }
 
 /* SHOOTING STAR */
 .shootingStar {
   position: absolute;
-  width: 3px;
+  width: 2px;
   height: 80px;
   background: white;
   top: -100px;
   left: 70%;
-  animation: shoot 3s linear infinite;
+  animation: shoot 4s linear infinite;
 }
 
 @keyframes shoot {
-  from { transform: translateY(0); opacity: 1; }
   to { transform: translateY(900px); opacity: 0; }
+}
+
+/* GIFT BUTTON */
+.giftBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: gold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
