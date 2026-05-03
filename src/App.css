@@ -21,21 +21,23 @@ body {
   background-size: 60px 60px;
   animation: moveStars 120s linear infinite;
   opacity: 0.6;
+  pointer-events: none;
 }
 
 @keyframes moveStars {
   to { transform: translate(-40%, -30%); }
 }
 
-/* PURPLE NEBULA */
+/* NEBULA */
 .nebula {
   position: absolute;
   width: 100%;
   height: 100%;
   background: radial-gradient(circle, rgba(139,92,246,0.4), transparent 60%);
+  pointer-events: none;
 }
 
-/* CONTENT CENTER */
+/* CONTENT */
 .content {
   position: relative;
   z-index: 2;
@@ -53,18 +55,25 @@ body {
   border-radius: 12px;
 }
 
-/* TEXT */
+/* NAME */
 .nameBlink {
   color: white;
   animation: blink 1.5s infinite;
 }
 
-.role {
-  color: #d8b4fe;
-}
-
 @keyframes blink {
   50% { opacity: 0.3; }
+}
+
+/* ROLE (GLOW) */
+.role {
+  color: #d8b4fe;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #a855f7; }
+  to { text-shadow: 0 0 15px #ec4899; }
 }
 
 /* CARDS */
@@ -76,21 +85,38 @@ body {
   color: white;
 
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
 
-  border: 1px solid rgba(255,255,255,0.1);
   text-align: center;
+
+  animation: fadeUp 1s ease forwards, float 4s infinite;
+}
+
+.about { animation-delay: 0.3s; }
+.skills { animation-delay: 0.6s; }
+.contact { animation-delay: 0.9s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  50% { transform: translateY(-8px); }
 }
 
 /* LINKS */
 a {
   display: block;
   color: #38bdf8;
+  margin: 5px;
   text-decoration: none;
 }
 
 a:hover {
   color: white;
+  transform: scale(1.05);
 }
 
 /* BUTTON */
@@ -110,9 +136,9 @@ a:hover {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background: black;
 }
 
+/* NAME */
 .spaceName {
   position: absolute;
   top: 10px;
@@ -122,11 +148,13 @@ a:hover {
   animation: blink 2s infinite;
 }
 
+/* EXIT BUTTON */
 .backBtn {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 8px 12px;
+  top: 15px;
+  left: 15px;
+  z-index: 100;
+  padding: 10px;
   background: #a855f7;
   border: none;
   color: white;
@@ -155,16 +183,17 @@ a:hover {
   box-shadow: 0 0 50px orange;
 }
 
-/* ORBITS */
+/* ORBIT */
 .orbit {
   position: absolute;
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  transform-origin: center;
+  transform: translate(-50%, -50%);
+  border: 1px dashed rgba(255,255,255,0.3);
 }
 
-/* PLANETS */
+/* PLANET */
 .planet {
   position: absolute;
   top: 50%;
@@ -173,22 +202,22 @@ a:hover {
   border-radius: 50%;
 }
 
-/* ORBIT SIZES */
-.o1 { width: 140px; height: 140px; animation: spin 4s linear infinite; }
-.o2 { width: 180px; height: 180px; animation: spin 6s linear infinite; }
+/* ORBIT SIZE */
+.o1 { width: 120px; height: 120px; animation: spin 4s linear infinite; }
+.o2 { width: 170px; height: 170px; animation: spin 6s linear infinite; }
 .o3 { width: 220px; height: 220px; animation: spin 8s linear infinite; }
-.o4 { width: 260px; height: 260px; animation: spin 10s linear infinite; }
-.o5 { width: 320px; height: 320px; animation: spin 14s linear infinite; }
-.o6 { width: 380px; height: 380px; animation: spin 18s linear infinite; }
-.o7 { width: 440px; height: 440px; animation: spin 22s linear infinite; }
-.o8 { width: 500px; height: 500px; animation: spin 26s linear infinite; }
+.o4 { width: 270px; height: 270px; animation: spin 10s linear infinite; }
+.o5 { width: 340px; height: 340px; animation: spin 14s linear infinite; }
+.o6 { width: 410px; height: 410px; animation: spin 18s linear infinite; }
+.o7 { width: 480px; height: 480px; animation: spin 22s linear infinite; }
+.o8 { width: 550px; height: 550px; animation: spin 26s linear infinite; }
 
 @keyframes spin {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* PLANET COLORS */
+/* PLANETS */
 .p1 { width: 8px; height: 8px; background: gray; }
 .p2 { width: 12px; height: 12px; background: orange; }
 .p3 { width: 14px; height: 14px; background: blue; }
