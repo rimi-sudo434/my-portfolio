@@ -17,27 +17,29 @@ function App() {
           <div className="content">
 
             <img
-              className="gif"
+              className="gif floatAnim"
               src="https://media4.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif"
               alt="gif"
             />
 
-            <h1 className="nameBlink">✨ Rimita Ghosh ✨</h1>
+            <h1 className="nameBlink glowText">✨ Rimita Ghosh ✨</h1>
 
-            <h2 className="role">Web Developer • Tech Enthusiast</h2>
+            <h2 className="role typewriter">
+              Web Developer • Tech Enthusiast
+            </h2>
 
-            <div className="card about">
+            <div className="card about fadeUp">
               <h3>🌱 About Me</h3>
               <p>I enjoy building projects and improving my skills through learning.</p>
             </div>
 
-            <div className="card skills">
+            <div className="card skills fadeUp delay1">
               <h3>💻 Skills</h3>
               <p>C, C++, Java, Python, JavaScript</p>
               <p>React, Flutter</p>
             </div>
 
-            <div className="card contact">
+            <div className="card contact fadeUp delay2">
               <h3>📬 Contact</h3>
 
               <a href="mailto:rimitaghosh477@gmail.com">📧 Email Me</a>
@@ -51,7 +53,7 @@ function App() {
               </a>
             </div>
 
-            <button className="btn" onClick={() => setGalaxy(true)}>
+            <button className="btn pulseBtn" onClick={() => setGalaxy(true)}>
               🌌 Explore My Universe
             </button>
 
@@ -63,9 +65,9 @@ function App() {
       {galaxy && (
         <div className="universe">
 
-          <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
+          <h1 className="spaceName glowText">✨ Solar System ✨</h1>
 
-          <button className="backBtn" onClick={() => setGalaxy(false)}>
+          <button className="backBtn fixBtn" onClick={() => setGalaxy(false)}>
             Exit
           </button>
 
@@ -76,47 +78,20 @@ function App() {
 
             <div className="sun"></div>
 
-            {/* MERCURY */}
-            <div className="orbit o1">
-              <div className="planet mercury"></div>
-            </div>
+            <div className="orbit o1"><div className="planet mercury"></div></div>
+            <div className="orbit o2"><div className="planet venus"></div></div>
+            <div className="orbit o3"><div className="planet earth"></div></div>
+            <div className="orbit o4"><div className="planet mars"></div></div>
+            <div className="orbit o5"><div className="planet jupiter"></div></div>
 
-            {/* VENUS */}
-            <div className="orbit o2">
-              <div className="planet venus"></div>
-            </div>
-
-            {/* EARTH */}
-            <div className="orbit o3">
-              <div className="planet earth"></div>
-            </div>
-
-            {/* MARS */}
-            <div className="orbit o4">
-              <div className="planet mars"></div>
-            </div>
-
-            {/* JUPITER */}
-            <div className="orbit o5">
-              <div className="planet jupiter"></div>
-            </div>
-
-            {/* SATURN */}
             <div className="orbit o6">
               <div className="saturn">
                 <div className="ring"></div>
               </div>
             </div>
 
-            {/* URANUS */}
-            <div className="orbit o7">
-              <div className="planet uranus"></div>
-            </div>
-
-            {/* NEPTUNE */}
-            <div className="orbit o8">
-              <div className="planet neptune"></div>
-            </div>
+            <div className="orbit o7"><div className="planet uranus"></div></div>
+            <div className="orbit o8"><div className="planet neptune"></div></div>
 
           </div>
 
