@@ -7,60 +7,55 @@ body {
 /* ================= HOME ================= */
 
 .home {
-  min-height: 100vh;
-  padding: 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-  color: white;
-
-  background: radial-gradient(circle at center, #1a0033, #000);
-  overflow: hidden;
+  height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
-/* stars */
-.home::before {
-  content: "";
+/* STARS */
+.stars {
   position: absolute;
   width: 300%;
   height: 300%;
   background: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-size: 60px 60px;
   animation: moveStars 120s linear infinite;
-  opacity: 0.4;
-}
-
-/* purple glow */
-.home::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(139,92,246,0.3), transparent 60%);
-}
-
-.home > * {
-  position: relative;
-  z-index: 1;
+  opacity: 0.6;
 }
 
 @keyframes moveStars {
   to { transform: translate(-40%, -30%); }
 }
 
+/* PURPLE NEBULA */
+.nebula {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(139,92,246,0.4), transparent 60%);
+}
+
+/* CONTENT CENTER */
+.content {
+  position: relative;
+  z-index: 2;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* GIF */
 .gif {
-  width: 180px;
-  border-radius: 15px;
+  width: 150px;
+  border-radius: 12px;
 }
 
 /* TEXT */
 .nameBlink {
+  color: white;
   animation: blink 1.5s infinite;
 }
 
@@ -72,18 +67,19 @@ body {
   50% { opacity: 0.3; }
 }
 
-/* BOX */
-.box {
-  width: 85%;
-  max-width: 500px;
-  margin: 12px;
+/* CARDS */
+.card {
+  width: 320px;
+  margin: 10px;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 12px;
   color: white;
 
-  backdrop-filter: blur(10px);
   background: rgba(255,255,255,0.08);
-  box-shadow: 0 0 15px rgba(139,92,246,0.3);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
 }
 
 /* LINKS */
@@ -98,20 +94,14 @@ a:hover {
 }
 
 /* BUTTON */
-.galaxyBtn {
-  margin-top: 20px;
-  padding: 15px 25px;
-  font-size: 18px;
+.btn {
+  margin-top: 15px;
+  padding: 12px 20px;
   background: linear-gradient(45deg, #7c3aed, #ec4899);
   border: none;
-  border-radius: 30px;
+  border-radius: 25px;
   color: white;
   cursor: pointer;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  50% { transform: scale(1.1); }
 }
 
 /* ================= UNIVERSE ================= */
@@ -120,10 +110,9 @@ a:hover {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle, #0b0015, #000);
+  background: black;
 }
 
-/* NAME */
 .spaceName {
   position: absolute;
   top: 10px;
@@ -131,15 +120,12 @@ a:hover {
   text-align: center;
   color: white;
   animation: blink 2s infinite;
-  z-index: 10;
 }
 
-/* BACK */
 .backBtn {
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 20;
   padding: 8px 12px;
   background: #a855f7;
   border: none;
@@ -148,24 +134,7 @@ a:hover {
   cursor: pointer;
 }
 
-/* BG */
-.stars {
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(white 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: moveStars 120s linear infinite;
-}
-
-.nebula {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(139,92,246,0.3), transparent 60%);
-}
-
-/* SOLAR */
+/* SOLAR SYSTEM */
 .solar {
   position: absolute;
   top: 55%;
@@ -183,20 +152,19 @@ a:hover {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(circle, orange, red);
-  box-shadow: 0 0 60px orange;
+  box-shadow: 0 0 50px orange;
 }
 
-/* ORBIT */
+/* ORBITS */
 .orbit {
   position: absolute;
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  border: 1px dashed rgba(255,255,255,0.2);
   transform-origin: center;
 }
 
-/* PLANET */
+/* PLANETS */
 .planet {
   position: absolute;
   top: 50%;
@@ -205,7 +173,7 @@ a:hover {
   border-radius: 50%;
 }
 
-/* ORBITS */
+/* ORBIT SIZES */
 .o1 { width: 140px; height: 140px; animation: spin 4s linear infinite; }
 .o2 { width: 180px; height: 180px; animation: spin 6s linear infinite; }
 .o3 { width: 220px; height: 220px; animation: spin 8s linear infinite; }
@@ -220,7 +188,7 @@ a:hover {
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* PLANETS */
+/* PLANET COLORS */
 .p1 { width: 8px; height: 8px; background: gray; }
 .p2 { width: 12px; height: 12px; background: orange; }
 .p3 { width: 14px; height: 14px; background: blue; }
@@ -229,32 +197,3 @@ a:hover {
 .p6 { width: 20px; height: 20px; background: gold; }
 .p7 { width: 18px; height: 18px; background: cyan; }
 .p8 { width: 18px; height: 18px; background: darkblue; }
-
-/* BELT */
-.belt {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  box-shadow: 0 0 2px white, 0 0 5px gray inset;
-}
-
-/* COMET */
-.comet {
-  position: absolute;
-  width: 3px;
-  height: 100px;
-  background: linear-gradient(white, transparent);
-  top: -100px;
-  left: 80%;
-  transform: rotate(45deg);
-  animation: cometMove 6s linear infinite;
-}
-
-@keyframes cometMove {
-  0% { transform: translate(0,0) rotate(45deg); opacity: 1; }
-  100% { transform: translate(-600px, 800px) rotate(45deg); opacity: 0; }
-}
