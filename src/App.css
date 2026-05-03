@@ -21,7 +21,7 @@ body {
   overflow: hidden;
 }
 
-/* MOVING STARS */
+/* moving stars */
 .home::before {
   content: "";
   position: absolute;
@@ -31,7 +31,6 @@ body {
   background-size: 50px 50px;
   animation: moveStars 120s linear infinite;
   opacity: 0.3;
-  z-index: 0;
 }
 
 .home > * {
@@ -43,6 +42,10 @@ body {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes moveStars {
+  to { transform: translate(-40%,-30%); }
 }
 
 .gif {
@@ -86,6 +89,7 @@ a:hover {
   color: white;
 }
 
+/* BUTTON */
 .galaxyBtn {
   margin-top: 20px;
   padding: 15px 25px;
@@ -111,7 +115,16 @@ a:hover {
   background: radial-gradient(circle, #0b0015, #000);
 }
 
-/* EXIT BUTTON FIX */
+.spaceName {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  animation: blink 2s infinite;
+  z-index: 10;
+}
+
 .backBtn {
   position: absolute;
   top: 20px;
@@ -125,19 +138,7 @@ a:hover {
   cursor: pointer;
 }
 
-/* CENTER NAME */
-.centerName {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: white;
-  animation: blink 1.5s infinite;
-  z-index: 10;
-}
-
-/* STARS */
+/* BACKGROUND */
 .stars {
   position: absolute;
   width: 300%;
@@ -147,11 +148,6 @@ a:hover {
   animation: moveStars 120s linear infinite;
 }
 
-@keyframes moveStars {
-  to { transform: translate(-40%,-30%); }
-}
-
-/* NEBULA */
 .nebula {
   position: absolute;
   width: 100%;
@@ -159,46 +155,85 @@ a:hover {
   background: radial-gradient(circle, rgba(139,92,246,0.3), transparent 60%);
 }
 
-/* SUN */
-.sun {
+/* SOLAR SYSTEM */
+.solarSystem {
   position: absolute;
-  width: 90px;
-  height: 90px;
-  top: 40%;
+  top: 55%;
   left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: radial-gradient(circle, yellow, orange);
-  box-shadow: 0 0 40px yellow;
+  box-shadow: 0 0 50px yellow;
 }
 
-/* PLANETS */
-.earth, .moon, .planet {
+.orbit {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
 }
 
-.earth {
-  width: 60px;
-  height: 60px;
-  background: blue;
-  animation: orbit 8s linear infinite;
+.planet {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
 }
 
-.moon {
-  width: 25px;
-  height: 25px;
-  background: gray;
-  animation: orbit 4s linear infinite;
+/* ORBITS */
+.orbit1 { width: 120px; height: 120px; animation: rotate 5s linear infinite; }
+.orbit2 { width: 180px; height: 180px; animation: rotate 8s linear infinite; }
+.orbit3 { width: 240px; height: 240px; animation: rotate 10s linear infinite; }
+.orbit4 { width: 300px; height: 300px; animation: rotate 14s linear infinite; }
+.orbit5 { width: 380px; height: 380px; animation: rotate 20s linear infinite; }
+
+/* PLANETS */
+.mercury { width: 10px; height: 10px; background: gray; }
+.venus   { width: 14px; height: 14px; background: orange; }
+.earth   { width: 16px; height: 16px; background: blue; }
+.mars    { width: 14px; height: 14px; background: red; }
+.jupiter { width: 28px; height: 28px; background: #d97706; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.p1 { width: 50px; height: 50px; background: red; animation: orbit 6s linear infinite; }
-.p2 { width: 70px; height: 70px; background: green; animation: orbit 10s linear infinite; }
-.p3 { width: 40px; height: 40px; background: yellow; animation: orbit 12s linear infinite; }
-.p4 { width: 60px; height: 60px; background: purple; animation: orbit 14s linear infinite; }
+/* ROCKET */
+.rocket {
+  position: absolute;
+  bottom: -100px;
+  left: 10%;
+  width: 40px;
+  height: 80px;
+  background: linear-gradient(white, gray);
+  border-radius: 20px;
+  animation: launch 6s infinite;
+}
 
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(120px); }
-  to { transform: rotate(360deg) translateX(120px); }
+.rocket::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 20px;
+  background: orange;
+  border-radius: 50%;
+}
+
+@keyframes launch {
+  0% { bottom: -100px; left: 10%; }
+  50% { bottom: 50%; left: 50%; }
+  100% { bottom: 110%; left: 80%; }
 }
 
 /* SHOOTING STAR */
