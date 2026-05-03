@@ -1,72 +1,85 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './App.css';
 
 function App() {
-  const [page, setPage] = useState(1);
+  const [galaxy, setGalaxy] = useState(false);
+
+  const [showTitle, setShowTitle] = useState(false);
+  const [showRole, setShowRole] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+  const [showSkills, setShowSkills] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setShowTitle(true), 500);
+    setTimeout(() => setShowRole(true), 1500);
+    setTimeout(() => setShowAbout(true), 2500);
+    setTimeout(() => setShowSkills(true), 3500);
+    setTimeout(() => setShowContact(true), 4500);
+  }, []);
 
   return (
     <div className="App">
 
-      {/* ================= PAGE 1 ================= */}
-      {page === 1 && (
-        <div className="page dark">
+      {/* ================= HOME ================= */}
+      {!galaxy && (
+        <div className="home">
 
-          <h1 className="blink">✨ Rimita Ghosh ✨</h1>
+          {showTitle && (
+            <h1 className="twinkle title">
+              Hi, I am Rimita Ghosh
+            </h1>
+          )}
 
-          <h2>🌱 About Me</h2>
-          <p>
-            I enjoy building projects and improving my skills through learning.
-          </p>
+          {showRole && (
+            <h2 className="twinkle role">
+              Web Developer • Tech Enthusiast
+            </h2>
+          )}
 
-          <button onClick={() => setPage(2)} className="btn">
-            Next → Skills
-          </button>
+          {showAbout && (
+            <div className="fade">
+              <h2>🌱 About Me</h2>
+              <p>
+                I enjoy building projects and continuously improving through learning.
+              </p>
+            </div>
+          )}
 
-        </div>
-      )}
+          {showSkills && (
+            <div className="fade">
+              <h2>💻 Skills</h2>
+              <p>
+                C, C++, Java, Python, JavaScript<br />
+                React Native, Flutter
+              </p>
+            </div>
+          )}
 
-      {/* ================= PAGE 2 ================= */}
-      {page === 2 && (
-        <div className="page dark">
+          {showContact && (
+            <div className="fade">
+              <h2>📬 Contact</h2>
+              <p>Email: rimitaghosh477@gmail.com</p>
+              <p>GitHub: github.com/rimi-sudo434</p>
+            </div>
+          )}
 
-          <h2>💻 Skills</h2>
-          <p>
-            C, C++, Java, Python, JavaScript<br />
-            React Native, Flutter
-          </p>
-
-          <button onClick={() => setPage(3)} className="btn">
-            Next → Contact
-          </button>
-
-        </div>
-      )}
-
-      {/* ================= PAGE 3 ================= */}
-      {page === 3 && (
-        <div className="page galaxy-bg">
-
-          <h2>📬 Contact</h2>
-          <p>Email: rimitaghosh477@gmail.com</p>
-          <p>GitHub: github.com/rimi-sudo434</p>
-
-          <button onClick={() => setPage(4)} className="btn">
+          <button className="btn" onClick={() => setGalaxy(true)}>
             Open My Galaxy
           </button>
 
-          {/* moving galaxy background */}
-          <div className="moving-stars"></div>
-
         </div>
       )}
 
-      {/* ================= PAGE 4 (FULL GALAXY) ================= */}
-      {page === 4 && (
-        <div className="galaxy">
+      {/* ================= GALAXY ================= */}
+      {galaxy && (
+        <div className="universe">
 
-          <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
+          <div className="infoPanel">
+            <h1 className="spaceName">✨ Rimita Ghosh ✨</h1>
+          </div>
 
-          <button className="backBtn" onClick={() => setPage(1)}>
+          <button className="backBtn" onClick={() => setGalaxy(false)}>
             Exit Galaxy
           </button>
 
