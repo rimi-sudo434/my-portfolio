@@ -1,20 +1,17 @@
 .App {
-  font-family: Arial, sans-serif;
   text-align: center;
-  color: white;
-  min-height: 100vh;
-}
-
-/* HOME PAGE */
-.home {
-  padding: 30px;
+  font-family: Arial;
   background: #0b0015;
   min-height: 100vh;
+  color: white;
 }
 
-/* BUTTON */
+/* HOME */
+.home {
+  padding-top: 100px;
+}
+
 .btn {
-  margin-top: 20px;
   padding: 10px 20px;
   background: #7c3aed;
   color: white;
@@ -23,54 +20,63 @@
   cursor: pointer;
 }
 
-.btn:hover {
-  background: #a855f7;
-}
+/* ===================== */
+/* 🌌 UNIVERSE MODE */
+/* ===================== */
 
-/* ====================== */
-/* 🌌 FULL GALAXY MODE */
-/* ====================== */
-
-.galaxy {
+.space {
   position: relative;
   min-height: 100vh;
-  background: radial-gradient(circle at center, #000010, #000000);
   overflow: hidden;
+  background: radial-gradient(circle at center, #000010, #000000);
 }
 
-/* stars animation */
+/* moving stars (depth effect) */
 .stars {
   position: absolute;
-  width: 200%;
-  height: 200%;
+  width: 300%;
+  height: 300%;
   background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: move 60s linear infinite;
+  background-size: 50px 50px;
+  animation: drift 80s linear infinite;
   opacity: 0.4;
 }
 
-@keyframes move {
-  from { transform: translateY(0); }
-  to { transform: translateY(-50%); }
+@keyframes drift {
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(-50%) translateX(-30%); }
 }
 
-/* space station */
+/* space station floating */
 .station {
   position: absolute;
-  top: 35%;
+  top: 40%;
   left: 45%;
   width: 120px;
   height: 120px;
   background: gray;
   clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 25px white;
+  animation: float 6s ease-in-out infinite;
 }
 
-/* planets */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* planets moving slowly */
 .planet {
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 20px #a855f7;
+  animation: orbit 10s linear infinite;
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(10px); }
+  100% { transform: rotate(360deg) translateX(10px); }
 }
 
 .p1 {
@@ -97,16 +103,28 @@
   background: yellow;
 }
 
-/* name */
+/* name blinking */
 .name {
-  position: relative;
-  top: 30px;
   color: white;
   animation: blink 1s infinite;
+  margin-top: 20px;
 }
 
 @keyframes blink {
   0% { opacity: 1; }
   50% { opacity: 0.2; }
   100% { opacity: 1; }
+}
+
+/* back button */
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 15px;
+  background: #a855f7;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
