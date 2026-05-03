@@ -15,7 +15,7 @@ function App() {
 
       {/* ABOUT */}
       <h2>🌱 About Me</h2>
-      <p>I enjoy building projects and improving my skills through continuous learning. I am curious about new technologies and focused on solving problems.</p>
+      <p>I enjoy building web projects and continuously improving my coding skills.</p>
 
       {/* SKILLS */}
       <h2>💻 Skills</h2>
